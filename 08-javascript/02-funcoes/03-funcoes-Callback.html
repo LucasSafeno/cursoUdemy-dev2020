@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - Funções Callback</title>
+	<script>
+		function exibirArtigo(id, callbackSucesso, callbackError){
+			// Recuperar id via requisição http
+			if(false){
+				callbackSucesso('Funções de Callback em JS', 'funções de callback são muitos utilizadas')
+			}else{
+				callbackError('Erro ao recuperar dados')
+			}
+		}
+
+		var callbackSucesso = function(titulo, descricao){
+			document.write('<h1>' + titulo + '</h1>')
+			document.write('<hr>')
+			document.write('<p>' + descricao +'</p>')
+		}
+
+		var callbackError = function(erro){
+			document.write('<p><b>Erro :</b> ' + erro + '</p>')
+		}
+
+		// não colocar (), pois colocando () o javascrip irá executar a função
+		exibirArtigo(1, callbackSucesso, callbackError)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
