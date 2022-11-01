@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercicio - JavaScript - Exercicio 1</title>
+	<script>
+		var n1 = parseInt(prompt('Informe o primeiro número : '))
+		var op = prompt('Digite soma para somar  ou subtração para subtrair : ')
+		var n2 = parseInt(prompt('Informe o segundo número : '))
+
+		switch(op){
+			
+			case 'soma':
+			var resultado =  n1 + n2
+			document.write('O resultado é : ' + resultado)
+			break
+			
+			case 'subtração':
+			var resultado = n1 - n2
+			document.write('O resultado é : ' + resultado)
+			break
+
+			default:
+			document.write('Operação não disponível!')
+
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
