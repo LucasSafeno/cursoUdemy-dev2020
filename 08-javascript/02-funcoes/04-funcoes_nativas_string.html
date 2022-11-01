@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - Funções Nativas para manipular String</title>
+	<script>
+
+		var	nome	=	' Lucas Tenorio '
+
+
+		// length - retorna quantidade de sring
+		document.write(nome.length)
+
+		document.write('<br>')
+
+		// charAt() - retorna um caracter baseado no numero da cadeia de carateceres
+		document.write('Lucas Tenorio'.charAt(0))
+
+		document.write('<br>')
+
+		// indexOf() - retornar a primeira ocorrencia do caractere
+		document.write(nome.indexOf('z'))
+		// Caso não haja caractere passado, irá retornar -1
+		
+		document.write('<br>')
+
+		// replace() - 	Substitui texto dentro de uma string
+		document.write(nome.replace('Lucas', 'Thauanna Santos'))
+
+		document.write('<br>')
+
+		// substr() - Extrai parte de uma string
+		document.write(nome.substr(1,4))
+
+		document.write('<br>')
+
+		// toLowerCase - Coverte todos os caracteres para minusculo
+		// toUpperCase - Coverte todos os caacteres para maisculos
+		document.write(nome.toLowerCase())
+		document.write('<br>')
+		document.write(nome.toUpperCase())
+
+		document.write('<br>')
+
+		// trim - remove espaos em branco nas extremidades da string
+		document.write(' -' + nome.trim() + '- ')
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
