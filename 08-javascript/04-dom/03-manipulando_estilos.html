@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - DOM - Manipulando Estilos</title>
+	<script>
+		function modificaEstilo(cordeFundo, l, a){
+			document.getElementById('quadrado').style.background = cordeFundo
+			document.getElementById('quadrado').style.width = l
+			document.getElementById('quadrado').style.height = a
+		}
+		
+	</script>
+</head>
+<body>
+	<h3>Manipulando Estilo</h3>
+	<button onclick="modificaEstilo('#FF0000', '200px', '100px')" type="submit">Vermelho</button>
+	<button onclick="modificaEstilo('#00FF00', '150px', '20px')" type="submit">Verde</button>
+	<button onclick="modificaEstilo('#0000FF', '150px', '200px')" type="submit">Azul</button>
+	<hr>
+	<div style="border: 1px solid #000; width: 100px; height: 100px;" id="quadrado"></div>
+</body>
+</html>
