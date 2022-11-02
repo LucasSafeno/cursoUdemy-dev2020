@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - Eventos - Teclado </title>
+	<script>
+		function acao1(){
+			alert('Evento disparado Key onkeydown')
+		}
+
+		function acao2(){
+			alert('Evento disparado Key onkeyup')
+		}
+
+		function acao3(){
+			alert('Evento disparado key press')
+		}
+	</script>
+</head>
+<body>
+	<input onkeydown="acao1()" type="text" placeholder="key down">
+	<input onkeyup="acao1()" type="text" placeholder="key up">
+	<input onkeypress="acao2()" type="text" placeholder="key press">
+</body>
+</html>
