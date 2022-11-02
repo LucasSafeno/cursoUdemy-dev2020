@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - DOM - Manipulando Valores Texts</title>
+	<script>
+		function distribuiCaractere(){
+			// selecionar caractere
+			var caractere = document.getElementById('entrada').value
+
+			// limpa canto de digitação
+			document.getElementById('entrada').value = ''
+
+			// limpar espaços em brancos
+			caractere.trim()
+
+			switch(caractere){
+				case '0':
+				case '1':
+				case '2':
+				case '3':
+				case '4':
+				case '5':
+				case '6':
+				case '7':
+				case '8':
+				case '9':
+					// adicionar caractere ao campo numeros
+					document.getElementById('apenasNumeros').value += caractere
+					break
+				default:
+					// adicionar caractere ao campo letras
+					document.getElementById('apenasLetras').value += caractere
+					
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<input id="entrada" type="text" placeholder="Digite um caracterer aqui" onkeyup="distribuiCaractere()">
+	<hr>
+	<span>Letras</span>
+	<input type="text" disabled="disabled" id="apenasLetras">
+
+	<span>Numeros</span>
+	<input type="text" disabled="disabled" id="apenasNumeros">
+</body>
+</html>
