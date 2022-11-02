@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - Eventos Mouse</title>
+	<script>
+		function acao(){
+			alert('Função disparada')
+		}
+
+		function doubleclick(){
+			alert('Double Click')
+		}
+
+		function upmouse(){
+			alert('MouseUp')
+		}
+
+		function overmouse(){
+			alert('Mouse over')
+		}
+
+		function outmouse(){
+			alert('Mouse Out')
+		}
+	</script>
+</head>
+<body>
+
+	<div onclick="acao()" style="background: #CCC; height: 150px; width: 150px;">Click</div>
+	
+	<div ondblclick="doubleclick()" style="background: #CCC; height: 150px; width: 150px; margin-top: 10px;"> Double Click</div>
+
+	<div onmouseup="upmouse()" style="background: #CCC; height: 150px; width: 150px; margin-top: 10px;"> Mouse Up</div>
+
+
+	<div onmouseover="overmouse()" style="background: #CCC; height: 150px; width: 150px; margin-top: 10px;"> Mouse Over</div>
+
+	<div onmouseout="outmouse()" style="background: #CCC; height: 150px; width: 150px; margin-top: 10px;"> Mouse out</div>
+
+
+</body>
+</html>
