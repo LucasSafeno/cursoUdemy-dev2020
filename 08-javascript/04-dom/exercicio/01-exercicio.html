@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript - DOM - Exercício 01</title>
+	<script>
+		function changebc(){
+			document.getElementById('campo_texto').style.backgroundColor = 'yellow'
+		}
+
+		function returnbc(){
+			var campo = document.getElementById('campo_texto')
+			campo.style.backgroundColor = 'white'
+
+			var qntCaractere = campo.value.length
+
+			if(qntCaractere <= 3){
+				campo.style.backgroundColor = 'red'
+			}else{
+				campo.style.backgroundColor = 'green'
+			}
+			
+		}
+		
+	</script>
+</head>
+<body>
+
+	<input onfocus="changebc()" onblur="returnbc()" type="text" name="" id="campo_texto">
+	
+</body>
+</html>
