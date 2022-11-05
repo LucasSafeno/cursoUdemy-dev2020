@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Babel - Var e let</title>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+	<script>
+		
+		/*
+		
+		 var series = 'Friends'
+
+
+		{
+			var series =  'The Walking Dead'
+			console.log('dentro do bloco ' + series)
+		}
+
+		console.log('Fora do bloco ' + series) */
+
+
+		let series = 'Friends'
+
+		{
+			let series = 'The Walking Dead'
+			console.log('Dentro do escopo ' + series)
+		}
+
+		console.log('Fora do escopo ' +  series)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
