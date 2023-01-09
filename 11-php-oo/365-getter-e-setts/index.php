@@ -25,6 +25,10 @@ class Funcionario{
 
 
 }// funcionarios
+
+
+
+
 $y = new Funcionario();
 $y->setNome('Lucas');
 $y->setNumFilhos(3);
