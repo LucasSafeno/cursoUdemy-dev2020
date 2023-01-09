@@ -1,6 +1,27 @@
 <?php
 require_once('validador_acesso.php');
 ?>
+<?php
+
+
+// chamados
+$chamados = array();
+
+
+// Abrir arquivo
+$arquivo = fopen('arquivo.hd', 'r');
+
+//PEcerroer enquanto houver linhas e registros a serem recueprados
+while(!feof($arquivo)){ //testa pelo fim do arquivo
+  $registro = fgets($arquivo);
+  $chamados[] = $registro;
+}
+
+//fechar arquivo aberto
+fclose($arquivo);
+
+
+?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -40,27 +61,30 @@ require_once('validador_acesso.php');
             <div class="card-header">
               Consulta de chamado
             </div>
+            <?php
+            echo "<pre>";
+            print_r($chamados);
+            echo "</pre>";
+            ?>
             
             <div class="card-body">
-              
+
+            <?php
+            foreach($chamados as $chamado){  ?>
+
+                <?php
+                    $chamado_dados = explode('#', $chamado)
+                ?>
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
+                  <h5 class="card-title"><?php echo $chamado_dados[0] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado_dados[1] ?></h6>
+                  <p class="card-text"><?php echo $chamado_dados[2] ?></p>
 
                 </div>
               </div>
 
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
-                </div>
-              </div>
-
+              <?php } ?>
               <div class="row mt-5">
                 <div class="col-6">
                   <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
