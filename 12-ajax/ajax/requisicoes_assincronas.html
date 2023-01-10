@@ -10,18 +10,33 @@
         <script>
 
             function requisitarPagina(url){
+                // incluir gif de loading
+                if(!document.getElementById('loading')){
+                    let imgLoading = document.createElement('img')
+                    imgLoading.id = 'loading'
+                    imgLoading.src = 'loading.gif'
+                    imgLoading.className = 'rounded mx-auto d-block'
+
+                    document.getElementById('conteudo').appendChild(imgLoading)
+                }
+             
+
+                // Ajax
                 let ajax = new XMLHttpRequest()
 
                 // Requisição não iniciada, state = 0
-                console.log(ajax.readyState)
+                //console.log(ajax.readyState)
 
                 ajax.open('GET', url) // conexão com servidor open(METODO, URL)
                  // Conexão estabelecida com o servidor, state = 1
-                console.log(ajax.readyState)
+                //console.log(ajax.readyState)
                 
                 // de alguma forma fique de olhando para o progresso da req
                 ajax.onreadystatechange = () => {
-                    console.log(ajax.readyState)
+                    if(ajax.readyState == 4){
+                        console.log('Requisição finalizada com sucesso')
+                        document.getElementById('loading').remove()
+                    }
                 }
 
                 ajax.send()
@@ -48,7 +63,7 @@
 	    	<div class="row mb-2">
 	    		<div class="col-md-4 center"></div>
 	    		<div class="col-md-4 center">
-	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_1_conteudo.html')">Página 1</a>
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_1_conteudo.php')">Página 1</a>
 	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_2_conteudo.html')">Página 2</a>
 	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_3_conteudo.html')">Página 3</a>
 	    		</div>
@@ -58,8 +73,8 @@
 	    	<div class="row">
 		    	<div class="col-md-1"></div>
 
-		    	<div class="col-md-10">
-		    			
+		    	<div class="col-md-10" id="conteudo">
+                    
 		    	</div>
 		    		
 				<div class="col-md-1"></div>
