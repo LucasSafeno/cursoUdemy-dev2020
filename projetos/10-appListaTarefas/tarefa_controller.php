@@ -51,6 +51,15 @@ if($acao == 'inserir'){
     $tarefaService->marcarRealizada();
 
     header('Location: todas_tarefas.php');
+}else if($acao == 'recuperarTarefasPendentes'){
+    $tarefa = new Tarefa();
+
+    $conexao = new Conexao();
+
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefas = $tarefaService->mostrarPendentes();
+
+
 }
 
 

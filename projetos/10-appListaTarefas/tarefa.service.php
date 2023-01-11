@@ -62,4 +62,18 @@ class TarefaService{
         return $stmt->execute();
 
     }// marcarRealizada
+
+    public function mostrarPendentes(){
+        $query = $query = "SELECT
+        t.id,s.status,t.tarefa
+     FROM
+        tb_tarefas as t
+     LEFT JOIN tb_status as s on(t.id_status = s.id)
+     WHERE t.id_status = 1";
+        $stmt = $this->conexao->prepare($query);
+        $stmt->execute();
+        
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+
+    } //mostrarPendentes
 }//TarefaService
