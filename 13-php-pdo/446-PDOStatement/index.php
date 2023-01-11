@@ -10,12 +10,12 @@ try{
 
     $query = 'SELECT * FROM tb_usuarios';
     $stmt = $conexao->query($query);
-    $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $lista = $stmt->fetchAll(PDO::FETCH_OBJ);
     echo '<pre>';
     print_r($lista);
     echo '</pre>';
 
-    echo $lista[0]['nome']. ' - '.$lista[0]['email'];
+    echo $lista[0]->nome;
 
 
 
