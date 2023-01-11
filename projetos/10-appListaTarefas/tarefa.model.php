@@ -1,5 +1,5 @@
 <?php
-class Tarefa{
+class TarefaModel{
     private $id;
     private $id_status;
     private $tarefa;
