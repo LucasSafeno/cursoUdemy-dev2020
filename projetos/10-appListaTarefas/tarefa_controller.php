@@ -15,7 +15,11 @@ if($acao == 'inserir'){
     $tarefaService->inserir();
     header('Location: nova_tarefa.php?inclusao=1');
 }else if($acao == 'recuperar'){
-    echo 'Chegamos até aqui';
+    $tarefa = new Tarefa();
+    $conexao = new Conexao();
+
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefas = $tarefaService->recuperar();
 }
 
 
