@@ -41,6 +41,16 @@ if($acao == 'inserir'){
  $tarefaService->deletar();
         header('Location: todas_tarefas.php');
     
+}else if($acao == 'marcarrealizada'){
+    $tarefa = new Tarefa();
+    $tarefa->__set('id', $_GET['id']);
+    $tarefa->__set('id_status', 2);
+
+    $conexao = new Conexao();
+    $tarefaService = new TarefaService($conexao, $tarefa);
+    $tarefaService->marcarRealizada();
+
+    header('Location: todas_tarefas.php');
 }
 
 

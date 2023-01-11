@@ -61,7 +61,12 @@
 
 		function remover(id){
 			location.href = 'todas_tarefas.php?acao=remover&id='+id
-		}
+		} // remover
+
+
+		function marcarRealizado(id){
+			location.href = 'todas_tarefas.php?acao=marcarrealizada&id='+id
+		} //marcarRealizado
 	</script>
 
 	<body>
@@ -98,10 +103,13 @@
 										<?php echo $tarefa->tarefa; ?> <?php echo "($tarefa->status)";?>
 									</div>
 									<div class="col-sm-3 mt-2 d-flex justify-content-between">
+
 <i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $tarefa->id; ?>)"></i>
-<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $tarefa->id?>, '<?= $tarefa->tarefa?>')"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
+									<?php if($tarefa->status  == 'pendente') { ?>
+<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $tarefa->id?>, '<?= $tarefa->tarefa?>')"></i>									
+<i class="fas fa-check-square fa-lg text-success" onclick="marcarRealizado(<?= $tarefa->id?>)"></i>
+									<?php }?>
+								</div>
 								</div>
 							<?php } ?>
 						
