@@ -16,9 +16,9 @@ class Conexao{
             return $conexao;
 
         }catch(PDOException $e){
-            echo "<strong>Código:</strong>" . $e->gerCode();
+            echo "<strong>Código:</strong>" .$e->gerCode();
             echo '<br>';
-            echo "<strong>Mensagem :</strong>" . $e->getMessage();
+            echo "<strong>Mensagem :</strong>" .$e->getMessage();
         }
     }// conectar 
 }
