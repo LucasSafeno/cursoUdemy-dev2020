@@ -100,23 +100,12 @@
 				//////////////////////////////////////////////////
 				// Formulário
 				//////////////////////////////////////////////////
-					$('#nome').focus((e) =>{
-						console.log('Esse elemento html recebeu foco (nome)')
+					$('#nome, #email').focus((e) =>{
 						$(e.target).addClass('inputFocado')
 					})
 
-					$('#email').focus((e) =>{
-						console.log('Esse elemento html recebeu foco (email)')
-						$(e.target).addClass('inputFocado')
-					})
 				//////////////////////////////////////////////////
-					$('#nome').blur((e) =>{
-						console.log('perdeu o foco (nome)')
-						$(e.target).removeClass('inputFocado')
-					})
-
-					$('#email').blur((e) =>{
-						console.log('perdeu o foco (email)')
+					$('#nome, #email').blur((e) =>{
 						$(e.target).removeClass('inputFocado')
 					})
 				//////////////////////////////////////////////////
