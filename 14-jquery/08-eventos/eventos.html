@@ -39,8 +39,9 @@
 				$('#div1').scroll(function(){
 					$(this).css('background-color', 'blue')
 				})
-
+				//////////////////////////////////////////////////
 				// Mouse
+				//////////////////////////////////////////////////
 				/*
 				$('#btn1').mousedown(() =>{
 					$('#div2').css('background-color', 'green')
@@ -70,7 +71,7 @@
 					$('#resultadoDiv1').html('Saiu')
 				})
 				
-				//////////////////////////////////////////////////
+				
 				/* Mouse enter / mouse leave (novos) */
 				
 				$('#divInterna').mouseleave(() =>{
@@ -80,6 +81,19 @@
 				$('#divInterna').mouseenter(() =>{
 					$('#resultadoDiv2').html('Entrou')
 				})
+
+				//////////////////////////////////////////////////
+				// Teclado
+				//////////////////////////////////////////////////
+				
+				/*
+				$('#teclado').keydown(() =>{
+					$('#resultadotecla').html('tecla pressionada')
+				})*/
+				$('#teclado').keyup(() =>{
+					$('#resultadotecla').html('tecla pressionada')
+				})
+
 
 			})
 		</script>
@@ -118,8 +132,8 @@
 
 			<h3>Teclado</h3>
 			<span>Nome:</span>
-			<input type="text" />
-			<span>Resultado do evento sobre o input</span>
+			<input type="text" id="teclado"/>
+			<span id="resultadotecla" >Resultado do evento sobre o input</span>
 			<hr />
 
 			<h3>Formulário</h3>
