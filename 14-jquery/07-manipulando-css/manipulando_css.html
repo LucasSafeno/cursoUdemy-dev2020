@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+		<style>
+			.padrao{
+				background-color: #ddd;
+			}
+			.campo{
+				border: none;
+				padding: 10px;
+			}
+			.erro{
+				background-color: red;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(() =>{
+				$('body').css('margin', '0')
+				//$('#topo').css('background-color', '#155661').css('margin', '0').css('padding', '10px 20px 10px 20px')
+				$('#topo').css({'background-color': '#155661', 'margin': '0', 'padding': '10px 20px 10px 20px', 'color': 'white'})
+
+
+				$('input').addClass('campo padrao')
+				$('textarea').addClass('campo erro')
+
+				//$('textarea').hasClass('campo') // verifica se o elemento tem a class
+				$('textarea').removeClass('erro')
+				$('textarea').addClass('campo padrao')
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Barra de navegação da aplicação</h1>
+		</div>
+
+		<div>
+			<h3>Contato</h3>
+			<hr />
+
+			<p>Nome:</p>
+			<input type="text" />
+			<br />
+
+			<p>Email:</p>
+			<input type="text" />
+			<br />
+
+			<p>Mensagem:</p>
+			<textarea></textarea>
+			<br />
+
+			<button type="button">Enviar</button>
+		</div>
+	</body>
+
+</html>
