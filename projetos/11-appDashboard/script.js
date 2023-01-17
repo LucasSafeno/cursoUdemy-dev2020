@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     })
     
-    $.post('suporte.html', data =>{
+    $.get('suporte.html', data =>{
         $('#pagina').html(data)
    }) // get
 })
