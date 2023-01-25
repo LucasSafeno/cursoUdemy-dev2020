@@ -8,15 +8,25 @@ abstract class Action{
         $this->view = new \stdClass();
     } // construct
 
-    protected function render($view){
+    protected function render($view, $layout){
+        $this->view->page = $view;
+        if(file_exists("../App/Views/".$layout.".phtml")){
+            require_once "../App/Views/".$layout.".phtml";
+        }else{
+            $this->content();
+        }
+        
+    } // render
+
+    public function content(){
 
         $classeAtual = get_class($this);
 
         $classeAtual = str_replace('App\\Controllers\\', '', $classeAtual);
         $classeAtual = strtolower(str_replace('Controller', '', $classeAtual));
 
-        require_once("../App/Views/".$classeAtual."/".$view.".phtml");
-    } // render
+        require_once("../App/Views/".$classeAtual."/".$this->view->page.".phtml");
+    }
 
 
 
