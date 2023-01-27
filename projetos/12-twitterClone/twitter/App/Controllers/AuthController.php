@@ -10,7 +10,7 @@ class AuthController extends Action{
 	public function autenticar(){
 		$usuario = Container::getModel('Usuarios');
 		$usuario->__set('email', $_POST['email']);
-		$usuario->__set('senha', $_POST['senha']);
+		$usuario->__set('senha', md5($_POST['senha']));
 
 		$retorno = $usuario->autenticar();
 
@@ -27,7 +27,7 @@ class AuthController extends Action{
 		}
 
 	} // autenticar
-	
+
 	public function sair(){
 		session_start();
 		session_destroy();
