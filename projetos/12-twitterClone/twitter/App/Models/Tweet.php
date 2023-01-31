@@ -38,6 +38,9 @@ class Tweet extends Model{
                     left join usuarios as u on (t.id_usuario = u.id)
                  WHERE
                     id_usuario = :id_usuario
+                    OR t.id_usuario in(
+                        SELECT id_usuario_seguindo FROM usuarios_seguidores WHERE id_usuario = :id_usuario
+                    )
                 ORDER BY
                 t.data DESC";
         $stmt = $this->db->prepare($query);
@@ -48,6 +51,14 @@ class Tweet extends Model{
 
     }// getAll
 
+    public function remover($id){
+        $query = "DELETE FROM tweets WHERE id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id', $this->__get('id'));
+        $stmt->execute();
+
+        return true;
+    }
 
 
 }// Tweets
