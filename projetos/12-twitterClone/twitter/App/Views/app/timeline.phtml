@@ -27,7 +27,9 @@
 					
 					<div class="row mt-2 mb-2">
 						<div class="col mb-2">
-							<span class="perfilPainelNome"><?= $this->view->info_usuario['nome'];?></span>
+							<span class="perfilPainelNome">
+								<?= $this->view->info_usuario['nome'];?>
+							</span>
 						</div>
 					</div>
 
@@ -35,17 +37,23 @@
 
 						<div class="col">
 							<span class="perfilPainelItem">Tweets</span><br />
-							<span class="perfilPainelItemValor"><?= $this->view->total_tweets['total_tweets'];?></span>
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_tweet['total_tweets'];?>
+							</span>
 						</div>
 
 						<div class="col">
 							<span class="perfilPainelItem">Seguindo</span><br />
-							<span class="perfilPainelItemValor"><?= $this->view->total_seguindo['total_seguindo'];?></span>
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_seguindo['total_seguindo'];?>
+							</span>
 						</div>
 
 						<div class="col">
 							<span class="perfilPainelItem">Seguidores</span><br />
-							<span class="perfilPainelItemValor"><?= $this->view->total_seguidores['total_seguidores'];?></span>
+							<span class="perfilPainelItemValor">
+								<?= $this->view->total_seguidores['total_seguidores'];?>
+							</span>
 						</div>
 
 					</div>
@@ -79,6 +87,7 @@
 					<p><strong><?= $tweet['nome'] ?></strong> <small><span class="text text-muted">- 
 
 					<?= $tweet['data'] ?></span></small></p>
+
 					<p><?= $tweet['tweet'] ?></p>
 
 					<br />
