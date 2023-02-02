@@ -13,9 +13,23 @@ class AppController extends Action{
 				// recuperar twieets e enviar para view timeline
 				$tweet = Container::getModel('Tweet');
 				$tweet->__set('id_usuario', $_SESSION['id']);
-				$tweets = $tweet->getAll();
+		
 
+				// Variaveis de paginação
+				$total_registro_paginas = 10;
+				//$deslocamento = 0;
+				$pagina = isset($_GET['pagina']) ? $_GET['pagina'] :  1;
+				$deslocamento = ($pagina - 1) * $total_registro_paginas;
+
+				//$tweets = $tweet->getAll();
+				$tweets = $tweet->getPorPagina($total_registro_paginas, $deslocamento);
 				$this->view->tweets = $tweets;
+
+				$total_tweets = $tweet->getTotalRegistros();
+				
+				
+				$this->view->total_de_paginas = ceil($total_tweets['total'] / $total_registro_paginas);
+				$this->view->pagina_ativa = $pagina;
 
 				$usuario = Container::getModel('Usuarios');
 				$usuario->__set('id', $_SESSION['id']);
